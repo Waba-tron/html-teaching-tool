@@ -1,0 +1,9 @@
+import React from 'react'
+import './Button.styles.scss';
+const Button = ({text}) => {
+    return (
+        <button className="btn">{text}</button>
+    )
+}
+
+export default Button;
