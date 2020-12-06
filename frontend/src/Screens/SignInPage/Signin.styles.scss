@@ -1,0 +1,31 @@
+.login-container{
+    display: flex;
+    padding: 5rem;
+
+    .login-form-img{
+        width: 65%;
+
+         img{
+            height: 100%;
+            width: 100%;
+
+         }
+    }
+
+
+    .login-form{
+
+        padding: 2rem;
+        width: 35%;
+
+        h1{
+            font-weight: 100;
+        }
+
+        .btn-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

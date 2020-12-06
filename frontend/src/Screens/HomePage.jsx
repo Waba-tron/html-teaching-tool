@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.styles.scss';
 import homecover from '../imgs/home-header.jpg';
+import '../design-tokens/_scss-varibles.scss';
 import Button from '../components/Buttons/Button.component';
 let homeCoverStyle = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.555),rgba(0, 0, 0, 0.555)),url(${homecover})`

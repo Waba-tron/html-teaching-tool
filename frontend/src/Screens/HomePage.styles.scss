@@ -4,18 +4,15 @@
     background-size: cover;
     background-position: center;
 
-
-
     .main-header-content{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-       
 
         .header-text{
             
             h1{
-                color: #88d36a;
+                color:  var(--color-primary);
                 font-weight: 100;
             }
 
@@ -28,7 +25,7 @@
 
         .header-logo{
             font-size: 15rem;
-            color: #88d36a;
+            color:  var(--color-primary);
         }
 
     }
