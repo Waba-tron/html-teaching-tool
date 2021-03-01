@@ -6,7 +6,7 @@ const data = [
             {
               "type": "heading",
               "model": {
-                "text": "It stands for hyper text field"
+                 "text": "It stands for hyper text field"
               }
             },
             {
