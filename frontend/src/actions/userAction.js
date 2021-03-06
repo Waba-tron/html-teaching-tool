@@ -1,11 +1,11 @@
 import axios from "axios";
 import {
   USER_LOGIN_FAIL,
-  USER_LOGIN_LOGOUT,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
   USER_REGISTER_FAIL,
-  USER_REGISTER_LOGOUT,
+  USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
 } from "../constants/userConstants";
 
@@ -14,6 +14,7 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({
       type: USER_LOGIN_REQUEST,
     });
+
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +22,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "api/users/login",
+      "/api/users/login",
       { email, password },
       config
     );
@@ -42,18 +43,17 @@ export const login = (email, password) => async (dispatch) => {
     });
   }
 };
-
 export const logout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
-  dispatch({ type: USER_LOGIN_LOGOUT });
-  dispatch({ type: USER_REGISTER_LOGOUT });
+  dispatch({ type: USER_LOGOUT });
 };
 
 export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
-      type: USER_LOGIN_REQUEST,
+      type: USER_REGISTER_REQUEST,
     });
+
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "api/users",
+      "/api/users",
       { name, email, password },
       config
     );
