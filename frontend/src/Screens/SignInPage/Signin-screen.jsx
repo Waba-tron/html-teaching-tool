@@ -63,7 +63,9 @@ const SigninScreen = ({ location, history }) => {
             label="Password"
           />
 
-          <button type="submit">submit</button>
+          <div className="btn-container">
+            <Button text={"Sign In"} />
+          </div>
 
           <div className="btn-container"></div>
 
