@@ -72,6 +72,9 @@ const SignUpScreen = ({ location, history }) => {
             <Button text={"Sign Up"} />
           </div>
 
+
+
+
           <div className="btn-container">
             <Link to="Signin">Existing user</Link>
           </div>
