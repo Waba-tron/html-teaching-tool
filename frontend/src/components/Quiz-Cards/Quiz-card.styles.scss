@@ -1,0 +1,24 @@
+.quiz-card {
+  padding: 2rem;
+  background-color: white;
+  margin: 1rem;
+}
+.quiz-img {
+  width: 100%;
+}
+
+.quiz-content {
+  display: flex; /* establish flex container */
+  flex-direction: column; /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;
+}
+.score {
+  background-color: var(--color-primary);
+  margin-top: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  width: 50px;
+  border-radius: 50%;
+}

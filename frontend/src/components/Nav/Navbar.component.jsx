@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userAction.js";
+import Button from "../Buttons/Button.component.jsx";
 import "./Navbar.styles.scss";
 
+//<button onClick={logoutHandler}>Logout</button>
 function Navbar() {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
@@ -55,22 +57,45 @@ function Navbar() {
               </NavLink>
             </li>
 
-            <li className="nav-item">
-              <NavLink
-                to="/Tutroials"
-                className="nav-links"
-                activeClassName="current-link"
-                onClick={closeMobileMenu}
-              >
-                Tutorials
-              </NavLink>
-            </li>
-
             {userInfo ? (
-              <div>
-                <li className="nav-item nav-links">{userInfo.name}</li>
-                <button onClick={logoutHandler}>Logout</button>
-              </div>
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    to="/profile"
+                    className="nav-links"
+                    activeClassName="current-link"
+                    onClick={closeMobileMenu}
+                  >
+                    Profile
+                  </NavLink>
+                </li>
+
+                {userInfo.isAdmin ? (
+                  <>
+                    <li className="nav-item">
+                      <NavLink
+                        to="/admin"
+                        className="nav-links"
+                        activeClassName="current-link"
+                        onClick={closeMobileMenu}
+                      >
+                        Admin
+                      </NavLink>
+                    </li>
+                  </>
+                ) : (
+                  ""
+                )}
+
+                <li className="nav-item">
+                  <button
+                    className="nav-links logoutBtn"
+                    onClick={logoutHandler}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
             ) : (
               <li className="nav-item">
                 <NavLink

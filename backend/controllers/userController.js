@@ -16,7 +16,7 @@ const authUser = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(401);
+    res.status(401).send;
     throw new Error("Invalid email or password");
   }
 });
@@ -29,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (userExists) {
     res.status(400);
-    throw new Error("User alreadt exists");
+    throw new Error("User already exists");
   }
 
   const user = await User.create({

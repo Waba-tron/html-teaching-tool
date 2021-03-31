@@ -1,36 +1,83 @@
+.main-header {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
 
-.main-header{
-    height: 80vh;
+  .main-header-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
+    flex-wrap: wrap;
 
-    .main-header-content{
-        display: flex;
-        flex-wrap: wrap;
+    .header-text {
+      h1 {
+        color: var(--color-primary);
+        font-weight: 100;
+      }
 
-        .header-text{
-            
-            h1{
-                color:  var(--color-primary);
-                font-weight: 100;
-            }
-
-         
-            font-size: 1.5rem;
-            margin-left: 2rem;
-            color: white;
-        }
-
-        i{
-            font-size: 15rem;
-            color:  var(--color-primary);
-        }
-
+      font-size: 1.5rem;
+      margin-left: 2rem;
+      color: white;
     }
-    
+
+    i {
+      font-size: 15rem;
+      color: var(--color-primary);
+    }
+  }
 }
 
+.html {
+  padding: 2rem 17rem;
+}
 
+.intro {
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 4rem;
+  justify-content: space-evenly;
+
+  i {
+    font-size: 10rem;
+  }
+}
+
+.html-introduction {
+  padding: 2rem 17rem;
+
+  h2 {
+    text-align: center;
+  }
+  li {
+  }
+}
+
+.html-basics {
+  padding: 2rem 17rem;
+  background-color: var(--color-primary);
+
+  .basics-title {
+    text-align: center;
+    color: white;
+  }
+
+  .tutorial-section {
+    margin: 20px;
+    padding: 2rem;
+    background-color: white;
+    .content {
+      margin: 10px 0;
+    }
+  }
+}
+
+.html-advanced {
+  padding: 2rem 17rem;
+
+  .advanced-title {
+    text-align: center;
+  }
+}

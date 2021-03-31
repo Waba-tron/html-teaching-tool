@@ -1,0 +1,22 @@
+.profile {
+  padding: 3rem;
+}
+.quiz-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 2rem;
+}
+.instructions-title {
+  margin-top: 10px;
+}
+.instructions {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .quiz-panel {
+    flex-wrap: wrap;
+  }
+}

@@ -15,6 +15,7 @@ const SignUpScreen = ({ location, history }) => {
   const userRegister = useSelector((state) => state.userRegister);
   const { error, userInfo } = userRegister;
 
+  /*
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const SignUpScreen = ({ location, history }) => {
       history.push(redirect);
     }
   }, [history, userInfo, redirect]);
+  */
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -42,7 +44,9 @@ const SignUpScreen = ({ location, history }) => {
       </div>
 
       <div className="login-form">
+        {error && <h1>{error}</h1>}
         <h1>Sign Up</h1>
+
         <form onSubmit={submitHandler}>
           <FormInput
             type="text"
@@ -71,9 +75,6 @@ const SignUpScreen = ({ location, history }) => {
           <div className="btn-container">
             <Button text={"Sign Up"} />
           </div>
-
-
-
 
           <div className="btn-container">
             <Link to="Signin">Existing user</Link>

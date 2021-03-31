@@ -16,13 +16,13 @@ const SigninScreen = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { error, userInfo } = userLogin;
 
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  //const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
     if (userInfo) {
-      history.push(redirect);
+      history.push("/profile");
     }
-  }, [history, userInfo, redirect]);
+  }, [history, userInfo]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -44,6 +44,7 @@ const SigninScreen = ({ location, history }) => {
       </div>
 
       <div className="login-form">
+        {console.log(error)}
         {error && <h1>{error}</h1>}
         <h1>Sign In</h1>
         <form onSubmit={submitHandler}>
