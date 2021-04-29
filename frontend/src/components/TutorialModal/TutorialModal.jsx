@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneForest } from "react-syntax-highlighter/dist/esm/styles/prism";
-import Select from "react-select";
+import React from "react";
 import Button from "../Buttons/Button.component.jsx";
 import Panel from "../Panel/Panel";
+import { useHistory } from "react-router-dom";
 import "./TutorialModal.styles.scss";
 const MODAL_STYLES = {
   position: "fixed",
@@ -26,22 +24,31 @@ const OVERLAY_STYLES = {
   zIndex: 1000,
 };
 
-const TutorialModal = ({ content, onClose }) => {
+const TutorialModal = ({ content, onClose, language }) => {
+  const history = useHistory();
+  const takeToVideo = () => {
+    history.push(`/videos/${content.topic}`);
+  };
   return (
     <div>
       <div style={OVERLAY_STYLES} />
       <div style={MODAL_STYLES}>
-        <h1>Tutorial model</h1>
-        <h2>{content.title}</h2>
-        <Panel givenHtml={`${content.codeString}`} />
+        <h1 className="modal-title">{content.title}</h1>
 
-        <div className="test">
-          {/*
-          <SyntaxHighlighter language="javascript" style={duotoneForest}>
-            {}
-          </SyntaxHighlighter>
-          */}
-        </div>
+        {content.modalChallenges === undefined ? (
+          <Panel givenHtml={`${content.codeString}`} language={language} />
+        ) : (
+          <Panel
+            givenHtml={`${content.codeString + content.modalChallenges} `}
+            language={language}
+          />
+        )}
+
+        {content.hasVideo ? (
+          <Button event={takeToVideo} text={"Watch video"}></Button>
+        ) : (
+          ""
+        )}
         <Button event={onClose} text={"Close"}></Button>
       </div>
     </div>

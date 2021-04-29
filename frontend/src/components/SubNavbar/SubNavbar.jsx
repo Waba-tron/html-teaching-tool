@@ -1,8 +1,8 @@
 import React from "react";
 import "../../design-tokens/_scss-varibles.scss";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, animateScroll } from "react-scroll";
 
-import "./SubNavBar.css";
+import "./SubNavBar.scss";
 const SubNavbar = () => {
   return (
     <div className="subnav">
@@ -12,7 +12,7 @@ const SubNavbar = () => {
         to="introduction"
         spy={true}
         smooth={true}
-        offset={-175}
+        offset={-170}
         duration={1000}
       >
         Intro

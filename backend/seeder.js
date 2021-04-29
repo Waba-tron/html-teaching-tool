@@ -1,10 +1,17 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-import User from './models/userModel.js';
-import users from './data/users.js';
+import User from "./models/userModel.js";
+import users from "./data/users.js";
 
-import connectDB from './config/db.js';
+//quizs
+import Quiz from "./models/quizModal.js";
+import allQuestions from "./data/quizs.js";
+
+//questionnaireResponses
+import questionnaireResponse from "./models/questionnaireResponseModel.js";
+
+import connectDB from "./config/db.js";
 
 dotenv.config();
 connectDB();
@@ -14,8 +21,9 @@ const importData = async () => {
     await User.deleteMany();
 
     const sampleUsers = await User.insertMany(users);
+    await Quiz.insertMany(allQuestions);
     const adminUser = await sampleUsers[0]._id;
-    console.log('data is imported');
+    console.log("data is imported");
     process.exit();
   } catch (error) {
     console.error(`${error}`);
@@ -26,10 +34,13 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await User.deleteMany();
+    await questionnaireResponse.deleteMany();
+    await Quiz.deleteMany();
 
     const sampleUsers = await User.insertMany(users);
+    await Quiz.insertMany(allQuestions);
     const adminUser = await sampleUsers[0]._id;
-    console.log('data is deleted');
+    console.log("data is deleted");
     process.exit();
   } catch (error) {
     console.error(`${error}`);
@@ -37,7 +48,7 @@ const deleteData = async () => {
   }
 };
 
-if (process.argv[2] === '-d') {
+if (process.argv[2] === "-d") {
   deleteData();
 } else {
   importData();

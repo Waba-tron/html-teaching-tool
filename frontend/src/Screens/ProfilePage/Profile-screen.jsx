@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails } from "../../actions/userAction.js";
 import QuestionnaireModal from "../../components/QuestionnaireModal/QuestionnaireModel";
 import QuizCard from "../../components/Quiz-Cards/Quiz-card.component.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 import "../../design-tokens/_scss-varibles.scss";
 import "./Profile.styles.scss";
 const ProfileScreen = ({ history }) => {
@@ -43,7 +44,7 @@ const ProfileScreen = ({ history }) => {
   return (
     <div>
       {loading ? (
-        <h1>Loading</h1>
+        <Loader color={"#88d36a"} />
       ) : error ? (
         <h2>{error}</h2>
       ) : (
@@ -87,9 +88,9 @@ const ProfileScreen = ({ history }) => {
               <p className="instructions">
                 Welcome... this is your profile page. This page will a list of
                 quizzes to test your knowledge of HTML. To progress through
-                these quizzes obtain a minimum of 70% progress to the next one.
-                We would recommend looking at our tutorials before starting.
-                Happy Coding :)
+                these quizzes, obtain a minimum of 70% progress on to the next
+                one. We would recommend looking at our tutorials before
+                starting. Happy Coding :)
               </p>
             </div>
           </div>

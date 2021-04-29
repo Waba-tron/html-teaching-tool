@@ -4,6 +4,7 @@ import Button from "../Buttons/Button.component.jsx";
 import "../Quiz-Cards/Quiz-card.styles.scss";
 import "../../design-tokens/_scss-varibles.scss";
 import { useHistory } from "react-router-dom";
+import Loader from "../Loader/Loader.jsx";
 
 const QuizCard = ({ quizInfo, difficulty, id }) => {
   let history = useHistory();
@@ -32,7 +33,7 @@ const QuizCard = ({ quizInfo, difficulty, id }) => {
           )}
         </div>
       ) : (
-        "Loading"
+        <Loader color={"white"} />
       )}
     </>
   );

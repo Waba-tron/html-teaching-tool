@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { duotoneForest } from "react-syntax-highlighter/dist/esm/styles/prism";
 import TutorialModal from "../TutorialModal/TutorialModal.jsx";
 
-const TutorialContent = ({ content }) => {
+const TutorialContent = ({ content, language }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModel = () => {
@@ -34,7 +34,11 @@ const TutorialContent = ({ content }) => {
       <Button text={"Try it yourself"} event={toggleModel}></Button>
 
       {isOpen ? (
-        <TutorialModal content={content} onClose={() => setIsOpen(false)} />
+        <TutorialModal
+          content={content}
+          language={language}
+          onClose={() => setIsOpen(false)}
+        />
       ) : (
         ""
       )}

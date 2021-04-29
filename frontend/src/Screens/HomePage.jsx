@@ -4,10 +4,19 @@ import homecover from "../imgs/home-header.jpg";
 import "../design-tokens/_scss-varibles.scss";
 import Button from "../components/Buttons/Button.component";
 import TutorialContent from "../components/Tutorial-Content/Tutorial-content.component";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneForest } from "react-syntax-highlighter/dist/esm/styles/prism";
 import SubNavbar from "../components/SubNavbar/SubNavbar.jsx";
 import htmlContent from "../data/data.js";
+// ES6 Imports
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
+
 let homeCoverStyle = {
   backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.555),rgba(0, 0, 0, 0.555)),url(${homecover})`,
 };
@@ -24,7 +33,15 @@ const HomePage = ({ history }) => {
             <h1>Jot</h1>
             <span>A fun interactive tool to teach people HTML</span>
 
-            <Button text={"Tutorials"}></Button>
+            <Link
+              to="intro"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={1000}
+            >
+              <Button text={"Tutorials"}></Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -50,19 +67,31 @@ const HomePage = ({ history }) => {
       <SubNavbar />
       <div className="html-introduction" id="introduction">
         {htmlContent.htmlIntroContent.map((content) =>
-          content.type == "code" ? <TutorialContent content={content} /> : ""
+          content.type == "code" ? (
+            <TutorialContent language={"xml"} content={content} />
+          ) : (
+            ""
+          )
         )}
       </div>
       <div className="html-basics" id="basics">
         <h1 className="basics-title">Essential tags</h1>
         {htmlContent.htmlBasicsContent.map((content) =>
-          content.type == "code" ? <TutorialContent content={content} /> : ""
+          content.type == "code" ? (
+            <TutorialContent language={"xml"} content={content} />
+          ) : (
+            ""
+          )
         )}
       </div>
       <div className="html-advanced" id="advanced">
         <h1 className="advanced-title">Advanced html</h1>
         {htmlContent.htmlAdvancedContent.map((content) =>
-          content.type == "code" ? <TutorialContent content={content} /> : ""
+          content.type == "code" ? (
+            <TutorialContent language={"xml"} content={content} />
+          ) : (
+            ""
+          )
         )}
       </div>
     </div>

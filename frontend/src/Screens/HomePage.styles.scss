@@ -37,7 +37,7 @@
   color: white;
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem 4rem;
+  padding: 4rem;
   justify-content: space-evenly;
 
   i {
@@ -79,5 +79,44 @@
 
   .advanced-title {
     text-align: center;
+  }
+}
+
+//media queries
+@media screen and (max-width: 960px) {
+  .html-introduction {
+    padding: 2rem;
+  }
+
+  .html-basics {
+    padding: 2rem;
+  }
+
+  .html-advanced {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .main-header {
+    .main-header-content {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .main-header {
+    .main-header-content {
+      .header-text {
+        text-align: center;
+        margin-left: 0rem;
+        font-size: 1.4rem;
+      }
+
+      i {
+        font-size: 12rem;
+      }
+    }
   }
 }

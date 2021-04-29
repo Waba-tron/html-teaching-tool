@@ -1,8 +1,9 @@
 import express from "express";
 const router = express.Router();
-import { submitQuiz } from "../controllers/quizController.js";
+import { submitQuiz, getQuiz } from "../controllers/quizController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
-router.post("/", submitQuiz);
+router.post("/", protect, submitQuiz);
+router.get("/:id", protect, getQuiz);
 
 export default router;

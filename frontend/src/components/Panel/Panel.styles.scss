@@ -2,9 +2,6 @@ body {
   margin: 0;
 }
 
-.top-pane {
-}
-
 .pane {
   height: 50vh;
   display: flex;
@@ -48,5 +45,5 @@ body {
 .output-panel {
   background-color: white;
   width: 100%;
-  border: 2px solid green;
+  border: 2px solid var(--color-primary);
 }

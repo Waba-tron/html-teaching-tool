@@ -16,6 +16,7 @@ let htmlIntroContent = [
   </body>
   
 </html>`,
+
     contentList: [
       "The <!DOCTYPE html> declaration defines that this document is an HTML5 document",
       "The <html> element is the root element of an HTML page",
@@ -46,6 +47,16 @@ let htmlIntroContent = [
     type: "code",
     title: "Comments",
     codeString: `<h1> Heading tag </h1> <!-- My comment for heading tag --> \n\n<p> Heading tag </p> <!-- My comment for paragraph tag -->`,
+    modalChallenges: `
+    \n<!-- Challenges -->
+    
+<!--
+
+Write a comment of your full name and date of birth
+
+-->
+    
+    `,
     content:
       "HTML comments are not displayed in the browser, but they can help document your HTML source code. You can add comments to your HTML source by using the <!-- --> syntax",
     contentList: [],
@@ -62,6 +73,17 @@ let htmlBasicsContent = [
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>`,
+    modalChallenges: `
+\n<!-- Challenges -->
+
+<!--
+
+Type in your first name with the largest heading.
+Type in your sir name with the second largest heading
+
+-->
+
+`,
     content: `HTML headings are defined with the <h1> to <h6> tags.
 
     <h1> defines the most important heading. <h6> defines the least important heading.`,
@@ -71,6 +93,16 @@ let htmlBasicsContent = [
     type: "code",
     title: "Pargraph tags",
     codeString: `<p>Hello world</p>`,
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+Write a small sentance about yourself using the p tag
+
+-->
+    
+    `,
     content: `The HTML <p> element defines a paragraph.
 
     A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before and after a paragraph.`,
@@ -83,6 +115,18 @@ let htmlBasicsContent = [
 <p style="color:red;">I am red</p>
 <p style="color:blue;">I am blue</p>
 <p style="font-size:50px;">I am big</p>`,
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+- Change a color of one of the p tags
+
+- Change the font style of the largest p to "Times New Roman" tag using the font-family property
+
+-->
+    
+    `,
     content: `The HTML style attribute is used to add styles to an element, such as color, font, size, and more.`,
     contentList: [],
   },
@@ -90,6 +134,16 @@ let htmlBasicsContent = [
     type: "code",
     title: "Image tags",
     codeString: `<img src="img_girl.jpg" alt="Girl in a jacket">`,
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+Copy and paste a img address from google images in to the img src
+
+-->
+        
+        `,
     content: `The HTML <img> tag is used to embed an image in a web page.
 
  The <img> tag creates a holding space for the referenced image.
@@ -104,6 +158,18 @@ let htmlBasicsContent = [
     type: "code",
     title: "Link tags",
     codeString: `<a href="https://www.w3schools.com">Visit W3Schools.com!</a>`,
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+- Copy and paste link from another website in to the src property
+
+- Change the name of the link inside the body of the anchor tag
+
+-->
+        
+        `,
     content:
       " The HTML <a> tag defines a hyperlink. It has the following syntax:",
     contentList: [
@@ -122,8 +188,23 @@ let htmlBasicsContent = [
   <li>Tea</li>
   <li>Milk</li>
 </ul>`,
-    content: `Stuff about Lists`,
-    contentList: [],
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+- Make a heading called To Do List
+
+- Type up a new To Do List using the <ul> and <li> properties
+
+-->
+        
+        `,
+    content: ``,
+    contentList: [
+      `An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.`,
+      `The list items will be marked with bullets (small black circles) by default`,
+    ],
   },
 ];
 let htmlAdvancedContent = [
@@ -131,28 +212,47 @@ let htmlAdvancedContent = [
     type: "code",
     title: "Table tags",
     codeString: `<table style="width:100%">
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Age</th>
-    </tr>
-    <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-    </tr>
-  </table>`,
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>`,
+    modalChallenges: `
+\n<!-- Challenges -->
+    
+<!--
+
+- Make a new table of the current top 4 teams in the premier league
+
+- Table must show number of games played, points won and their position for each team
+
+Reference
+
+- Google premier league table as reference
+
+-->
+        
+        `,
+
     content: `The <table> tag defines an HTML table.`,
     contentList: [
       "Each table row is defined with a <tr> tag. Each table header is defined with a <th> tag. Each table data/cell is defined with a <td> tag.",
       "By default, the text in <th> elements are bold and centered.",
       "By default, the text in <td> elements are regular and left-aligned.",
     ],
+    hasVideo: true,
+    topic: "tables",
   },
   {
     type: "code",
@@ -184,7 +284,58 @@ let htmlAdvancedContent = [
       `The form-handler is specified in the form's action attribute.`,
       `Note: This is a html tool (Will not be going in to details with data bases and servers)`,
     ],
+    hasVideo: true,
+    topic: "forms",
+  },
+  {
+    type: "code",
+    title: "HTML JavaScript",
+    codeString: `<h2>Use JavaScript to Change Text</h2>
+
+<p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script> `,
+    content: ``,
+    contentList: [
+      `The HTML <script> tag is used to define a client-side script (JavaScript).`,
+      `Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.`,
+      `To select an HTML element, JavaScript most often uses the document.getElementById() method.`,
+      `This JavaScript example writes "Hello JavaScript!" into an HTML element with id="demo"`,
+      `Note: This is a html tool (Will not be going in to details of JavaScript)`,
+    ],
+    hasVideo: true,
+    topic: "javascript",
   },
 ];
 
-export default { htmlIntroContent, htmlBasicsContent, htmlAdvancedContent };
+let videoContent = [
+  {
+    language: "xml",
+    topic: "forms",
+    codeString: `<form></form>`,
+    videoLink: "https://www.youtube.com/embed/fNcJuPIZ2WE",
+  },
+  {
+    language: "javascript",
+    topic: "javascript",
+    codeString: `<script></script>`,
+    videoLink: "https://www.youtube.com/embed/hdI2bqOjy3c",
+  },
+  {
+    language: "xml",
+    topic: "tables",
+    codeString: `<table></table>`,
+    videoLink: "https://www.youtube.com/embed/6RE5vCsPOS4",
+  },
+];
+
+export default {
+  htmlIntroContent,
+  htmlBasicsContent,
+  htmlAdvancedContent,
+  videoContent,
+};

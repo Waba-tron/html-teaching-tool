@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Editor from "../Editor/Editor.jsx";
 import "./Panel.styles.scss";
+import "../../design-tokens/_scss-varibles.scss";
 
-const Panel = ({ givenHtml }) => {
+const Panel = ({ givenHtml, language }) => {
   const [html, sethtml] = useState(`${givenHtml}`);
   const [srcDoc, setSrcDoc] = useState("");
 
@@ -18,7 +19,7 @@ const Panel = ({ givenHtml }) => {
     <>
       <div className="pane top-pane">
         <Editor
-          language="xml"
+          language={language}
           displayName="HTML"
           value={html}
           onChange={sethtml}
