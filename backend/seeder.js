@@ -19,6 +19,8 @@ connectDB();
 const importData = async () => {
   try {
     await User.deleteMany();
+    await questionnaireResponse.deleteMany();
+    await Quiz.deleteMany();
 
     const sampleUsers = await User.insertMany(users);
     await Quiz.insertMany(allQuestions);

@@ -31,9 +31,11 @@ const QuizScreen = ({ history, match, location }) => {
             Authorization: `Bearer ${token}`,
           },
         };
+
         const apiQuiz = await axios.get(`/api/quiz/${match.params.id}`, config);
-        console.log(apiQuiz.data);
+
         setQuiz(apiQuiz.data);
+
         setLoading(false);
       } catch (error) {
         setError(

@@ -35,5 +35,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.13",
     "react-select": "^4.2.1"
-  }
+  },
+  "devDependencies": {}
 }
